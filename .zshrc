@@ -1,3 +1,11 @@
+# default
+autoload -U compinit
+compinit
+setopt auto_pushd
+setopt auto_cd
+setopt correct
+setopt cdable_vars
+
 # aliases
 alias ls='ls -G'
 alias ll='ls -la'
@@ -19,3 +27,10 @@ export MANPATH=/opt/local/man:$MANPATH
 # for mysql
 export PATH=$PATH:/opt/local/lib/mysql5/bin
 
+# for android-sdk
+export PATH=$PATH:/Developer/SDKs/android-sdk-macosx/tools
+
+# for RVM
+#if [[ -s /Users/runeleaf/.rvm/scripts/rvm ]] ; then source /Users/runeleaf/.rvm/scripts/rvm ; fi
+ 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

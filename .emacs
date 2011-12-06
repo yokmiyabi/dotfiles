@@ -1,3 +1,8 @@
+;; 言語を日本語にする
+(set-language-environment 'Japanese)
+;; 極力UTF-8とする
+(prefer-coding-system 'utf-8)
+
 (if window-system (progn
 	;;ウィンドウ初期設定
 	(setq initial-frame-alist '((width . 96)(height . 32)
