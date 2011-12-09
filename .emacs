@@ -3,8 +3,12 @@
 
 (if window-system (progn
 		    ;;ウィンドウ初期設定
-		    (setq initial-frame-alist '((width . 96)(height . 32)
-						    (top . 0)(left . 48)))
+		    (setq initial-frame-alist '(
+						(width . 96)
+						(height . 32)
+						(top . 0)
+						(left . 48)
+						(alpha . 80)))
 		    (set-background-color "Black")
 		    (set-foreground-color "white")
 		    ;;(set-cursor-color "Gray")
@@ -12,18 +16,21 @@
 		    ;; ウィンドウを半透明にする
 		    (set-frame-parameter nil 'alpha 85)
 
-		    ;; Macのキーバインドを使う。optionをメタキーにする。
-		    (mac-key-mode 1)
-		    (setq mac-option-modifier 'meta)
-
 		    ;; シフト + 矢印で範囲選択
 		    (setq pc-select-selection-keys-only t)
 		    (pc-selection-mode 1)
 
-		    ;; フォント設定
-		    (if (eq window-system 'mac) (require 'carbon-font))
-		    (fixed-width-set-fontset "hirakaku_w3" 12)
-		    (setq fixed-width-rescale nil)
+		    (if (eq window-system 'mac) (progn
+		      ;; Macのキーバインドを使う。optionをメタキーにする。
+		      (mac-key-mode 1)
+		      (setq mac-option-modifier 'meta)
+		      ;; フォント設定
+		      (require 'carbon-font)
+		      (fixed-width-set-fontset "hirakaku_w3" 12)
+		      (setq fixed-width-rescale nil)
+		    ))
+		    
+
 		    ;; --ここまで--
 ))
 
