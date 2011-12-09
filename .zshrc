@@ -9,6 +9,9 @@ setopt cdable_vars
 # aliases
 alias ls='ls -G'
 alias ll='ls -la'
+alias r=rails
+alias rs='rails server'
+alias rc='rails console'
 
 # apache, mysql
 alias startapache='sudo /opt/local/apache2/bin/apachectl start'
